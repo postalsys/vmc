@@ -8,7 +8,7 @@ const Path = require('path');
 const crypto = require('crypto');
 
 const { getCerts } = require('../lib/tools');
-const { parceVMC } = require('../lib/parse-vmc');
+const { parseVMC } = require('../lib/parse-vmc');
 
 chai.config.includeStack = true;
 
@@ -19,7 +19,7 @@ const fixtures = {
 
 describe('VMC Parser Tests', () => {
     it('Should parse Redshift VMC', async () => {
-        let parsed = await parceVMC(fixtures.redshift[0].cert.raw);
+        let parsed = await parseVMC(fixtures.redshift[0].cert.raw);
         expect(parsed).to.exist;
 
         expect(parsed.hashAlgo).to.equal('sha256');
@@ -31,7 +31,7 @@ describe('VMC Parser Tests', () => {
     });
 
     it('Should parse CNN VMC', async () => {
-        let parsed = await parceVMC(fixtures.cnn[0].cert.raw);
+        let parsed = await parseVMC(fixtures.cnn[0].cert.raw);
         expect(parsed).to.exist;
 
         expect(parsed.hashAlgo).to.equal('sha1');

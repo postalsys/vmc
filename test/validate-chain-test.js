@@ -45,6 +45,21 @@ describe('Chain Validation Tests', () => {
         }
     });
 
+    it('Should fail invalid chain', async () => {
+        const rootStore = RootStore.create();
+        const certs = getCerts(fixtures.cnn);
+        const psCerts = getCerts(fixtures.postal);
+        certs[0] = psCerts[0];
+
+        try {
+            const chain = validatedChain(certs, rootStore, new Date(CUR_DATE_FIXED));
+            expect(chain).to.not.exist;
+        } catch (err) {
+            expect(err).to.exist;
+            expect(err.code).to.equal('INVALID_CHAIN');
+        }
+    });
+
     it('Should fail non-vmc validation', async () => {
         const rootStore = RootStore.create();
         const certs = getCerts(fixtures.catchall);
@@ -58,14 +73,18 @@ describe('Chain Validation Tests', () => {
         }
     });
 
-    it('Should not fail non-vmc validation with custom root cert', async () => {
+    it('Should fail non-vmc cert with custom root cert', async () => {
         const rootStore = RootStore.create();
         const certs = getCerts(fixtures.catchall);
 
         rootStore.addCert(certs[certs.length - 1].pem);
 
-        const chain = validatedChain(certs, rootStore, new Date(CUR_DATE_FIXED));
-        expect(chain).to.exist;
-        expect(chain.length).to.equal(3);
+        try {
+            const chain = validatedChain(certs, rootStore, new Date(CUR_DATE_FIXED));
+            expect(chain).to.not.exist;
+        } catch (err) {
+            expect(err).to.exist;
+            expect(err.code).to.equal('BIMI_EXT_KEY_MISSING');
+        }
     });
 });

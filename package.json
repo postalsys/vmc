@@ -1,6 +1,6 @@
 {
     "name": "@postalsys/vmc",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Parse VMC logo files",
     "main": "lib/vmc.js",
     "scripts": {
@@ -20,7 +20,7 @@
     },
     "devDependencies": {
         "chai": "4.3.6",
-        "eslint": "8.19.0",
+        "eslint": "8.20.0",
         "eslint-config-nodemailer": "1.2.0",
         "eslint-config-prettier": "8.5.0",
         "mocha": "10.0.0"

@@ -1,5 +1,7 @@
 'use strict';
 
+// Root certificates from https://bimigroup.org/vmc-issuers/
+
 const Path = require('path');
 const fs = require('fs').promises;
 const { parsePemBundle } = require('./lib/tools');

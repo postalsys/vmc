@@ -6,7 +6,11 @@
     "scripts": {
         "test": "eslint \"lib/**/*.js\" \"test/**/*.js\" && mocha --recursive \"./test/**/*.js\" --reporter spec",
         "root-store": "node build-root-store.js",
-        "prepublish": "npm run root-store || true"
+        "update": "rm -rf node_modules package-lock.json && ncu -u && npm install && npm run root-store"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/postalsys/vmc.git"
     },
     "keywords": [
         "VMC"
@@ -14,15 +18,15 @@
     "author": "Postal Systems OÜ",
     "license": "MIT",
     "dependencies": {
-        "@peculiar/asn1-schema": "2.3.0",
-        "@peculiar/asn1-x509": "2.3.0",
-        "@peculiar/asn1-x509-logotype": "2.3.0"
+        "@peculiar/asn1-schema": "2.3.8",
+        "@peculiar/asn1-x509": "2.3.8",
+        "@peculiar/asn1-x509-logotype": "2.3.8"
     },
     "devDependencies": {
-        "chai": "4.3.6",
-        "eslint": "8.22.0",
+        "chai": "4.4.1",
+        "eslint": "8.56.0",
         "eslint-config-nodemailer": "1.2.0",
-        "eslint-config-prettier": "8.5.0",
-        "mocha": "10.0.0"
+        "eslint-config-prettier": "9.1.0",
+        "mocha": "10.2.0"
     }
 }

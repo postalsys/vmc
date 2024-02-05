@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8](https://github.com/postalsys/vmc/compare/v1.0.7...v1.0.8) (2024-02-05)
+
+
+### Bug Fixes
+
+* **deploy:** include package-lock file ([593c56a](https://github.com/postalsys/vmc/commit/593c56a8be7fba223c6a0dcdf48a2af446b13ba9))
+
 ## [1.0.7](https://github.com/postalsys/vmc/compare/v1.0.6...v1.0.7) (2024-02-05)
 
 

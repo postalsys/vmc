@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/postalsys/vmc/compare/v1.0.8...v1.1.0) (2024-11-05)
+
+
+### Features
+
+* **cert-type:** Detect if a certificate is VMC or CMC ([6123c0e](https://github.com/postalsys/vmc/commit/6123c0e47fe71195b5727cfe9fa0125560789b63))
+
 ## [1.0.8](https://github.com/postalsys/vmc/compare/v1.0.7...v1.0.8) (2024-02-05)
 
 

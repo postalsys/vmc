@@ -15,7 +15,8 @@ const fixtures = {
     cnn: fs.readFileSync(Path.join(__dirname, 'fixtures', 'cnn.pem')),
     redshift: fs.readFileSync(Path.join(__dirname, 'fixtures', 'redshift.pem')),
     digicert: fs.readFileSync(Path.join(__dirname, 'fixtures', 'digicert.pem')),
-    entrust: fs.readFileSync(Path.join(__dirname, 'fixtures', 'entrust_vmc_specific.pem'))
+    entrust: fs.readFileSync(Path.join(__dirname, 'fixtures', 'entrust_vmc_specific.pem')),
+    globalsignRoot: fs.readFileSync(Path.join(__dirname, 'fixtures', 'globalsign-root.pem'))
 };
 
 describe('Tools Tests', () => {
@@ -37,6 +38,11 @@ describe('Tools Tests', () => {
 
         it('Should parse Entrust root', async () => {
             let certs = parsePemBundle(fixtures.entrust);
+            expect(certs.length).to.equal(1);
+        });
+
+        it('Should parse Globalsign root', async () => {
+            let certs = parsePemBundle(fixtures.globalsignRoot);
             expect(certs.length).to.equal(1);
         });
     });

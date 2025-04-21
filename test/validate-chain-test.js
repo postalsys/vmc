@@ -18,7 +18,8 @@ const CUR_DATE_FIXED = '2022-07-09T08:30:14.715Z';
 const fixtures = {
     cnn: fs.readFileSync(Path.join(__dirname, 'fixtures', 'cnn.pem')),
     postal: fs.readFileSync(Path.join(__dirname, 'fixtures', 'postal_vmc.pem')),
-    catchall: fs.readFileSync(Path.join(__dirname, 'fixtures', 'catchall.delivery.pem'))
+    catchall: fs.readFileSync(Path.join(__dirname, 'fixtures', 'catchall.delivery.pem')),
+    globalsign: fs.readFileSync(Path.join(__dirname, 'fixtures', 'globalsign-vmc.pem'))
 };
 
 describe('Chain Validation Tests', () => {
@@ -28,6 +29,16 @@ describe('Chain Validation Tests', () => {
 
         // use fixed date so that the tests would not break in the future
         const chain = validatedChain(certs, rootStore, new Date(CUR_DATE_FIXED));
+        expect(chain).to.exist;
+        expect(chain.length).to.equal(3);
+    });
+
+    it('Should validate chain  (globalsign)', async () => {
+        const rootStore = RootStore.create();
+        const certs = getCerts(fixtures.globalsign);
+
+        // use fixed date so that the tests would not break in the future
+        const chain = validatedChain(certs, rootStore, new Date('2025-04-21T11:15:01.885Z'));
         expect(chain).to.exist;
         expect(chain.length).to.equal(3);
     });

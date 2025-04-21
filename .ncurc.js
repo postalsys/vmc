@@ -3,6 +3,7 @@ module.exports = {
     reject: [
         // only works as ESM
         'chai',
+        'eslint-config-prettier',
         // api changes
         'eslint'
     ]

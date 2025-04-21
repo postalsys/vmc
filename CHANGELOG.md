@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/postalsys/vmc/compare/v1.1.0...v1.1.1) (2025-04-21)
+
+
+### Bug Fixes
+
+* **root-store:** Added GlobalSign root certificate ([7117018](https://github.com/postalsys/vmc/commit/71170189da3dc820074428328b38da6b5fcd41c6))
+
 ## [1.1.0](https://github.com/postalsys/vmc/compare/v1.0.8...v1.1.0) (2024-11-05)
 
 

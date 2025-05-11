@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/postalsys/vmc/compare/v1.1.1...v1.1.2) (2025-05-11)
+
+
+### Bug Fixes
+
+* **root-store:** Added SSL.com root certs for VMC ([28d4eba](https://github.com/postalsys/vmc/commit/28d4ebac2b5c5bc910b2aa47be75212e96af3f91))
+
 ## [1.1.1](https://github.com/postalsys/vmc/compare/v1.1.0...v1.1.1) (2025-04-21)
 
 

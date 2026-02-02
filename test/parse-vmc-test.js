@@ -14,7 +14,8 @@ chai.config.includeStack = true;
 
 const fixtures = {
     cnn: getCerts(fs.readFileSync(Path.join(__dirname, 'fixtures', 'cnn.pem'))),
-    redshift: getCerts(fs.readFileSync(Path.join(__dirname, 'fixtures', 'redshift.pem')))
+    redshift: getCerts(fs.readFileSync(Path.join(__dirname, 'fixtures', 'redshift.pem'))),
+    digicert: getCerts(fs.readFileSync(Path.join(__dirname, 'fixtures', 'digicert.pem')))
 };
 
 describe('VMC Parser Tests', () => {
@@ -40,5 +41,16 @@ describe('VMC Parser Tests', () => {
 
         let hash = crypto.createHash('sha1').update(parsed.logoFile).digest('hex');
         expect(hash).to.equal('ea8c81da633c66a16262134a78576cdf067638e9');
+    });
+
+    it('Should throw INVALID_LOGOTYPE_EXT for certificate without logotype extension', async () => {
+        try {
+            // digicert.pem is a root certificate without logotype extension
+            await parseVMC(fixtures.digicert[0].cert.raw);
+            expect.fail('Should have thrown an error');
+        } catch (err) {
+            expect(err).to.exist;
+            expect(err.code).to.equal('INVALID_LOGOTYPE_EXT');
+        }
     });
 });

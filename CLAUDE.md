@@ -48,8 +48,18 @@ npm run root-store
 - `lib/tools.js` - Utilities: PEM bundle parsing, certificate loading, subject parsing with VMC-specific OIDs.
 
 ### Data Files
-- `data/root-store/` - Source PEM files for trusted VMC root certificates (DigiCert, Entrust, GlobalSign, SSL.com)
+- `data/root-store/` - Source PEM files for trusted VMC root certificates
 - `data/root-store.json` - Generated JSON array of root certificates (built via `npm run root-store`)
+
+### Root Certificate Issuers
+Reference: https://bimigroup.org/vmc-issuers/
+
+| Issuer | File | Status |
+|--------|------|--------|
+| DigiCert | `digicert.pem` | Active |
+| GlobalSign | `gsverifiedmarkrootr42.pem` | Active |
+| SSL.com | `SSL.com-VMC-Root-2024-ECC.pem`, `SSL.com-VMC-Root-2024-RSA.pem` | Active |
+| Entrust | `entrust_vmc_specific.pem` | Removed from BIMI issuers page (Feb 2025), kept for backward compatibility |
 
 ### VMC-Specific OIDs
 The library handles these trademark-related OIDs in certificate subjects:

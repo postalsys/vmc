@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/postalsys/vmc/compare/v1.1.2...v1.1.3) (2026-02-03)
+
+
+### Bug Fixes
+
+* trigger build ([0ae588b](https://github.com/postalsys/vmc/commit/0ae588b1c63cd0bcadbdc355f742503497064792))
+
 ## [1.1.2](https://github.com/postalsys/vmc/compare/v1.1.1...v1.1.2) (2025-05-11)
 
 

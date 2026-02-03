@@ -1,6 +1,6 @@
 {
     "name": "@postalsys/vmc",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "description": "Parse VMC logo files",
     "main": "lib/vmc.js",
     "scripts": {

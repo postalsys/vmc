@@ -20,10 +20,10 @@ const pemBundle = fs.readFileSync('certificate.pem');
 // Parse and validate the VMC
 const logo = await vmc(pemBundle);
 
-console.log(logo.type);        // 'VMC' or 'CMC'
-console.log(logo.mediaType);   // 'image/svg+xml'
-console.log(logo.validHash);   // true if logo hash matches
-console.log(logo.logoFile);    // Base64-encoded SVG logo
+console.log(logo.type); // 'VMC' or 'CMC'
+console.log(logo.mediaType); // 'image/svg+xml'
+console.log(logo.validHash); // true if logo hash matches
+console.log(logo.logoFile); // Base64-encoded SVG logo
 console.log(logo.certificate); // Certificate details
 ```
 
@@ -58,8 +58,8 @@ Parses and validates a VMC/CMC certificate bundle.
 
 - `pem` (Buffer|string) - PEM-encoded certificate bundle containing the leaf certificate and any intermediate certificates
 - `options` (object, optional)
-  - `rootStore` (RootStore) - Custom root store for certificate validation. Defaults to built-in VMC root certificates.
-  - `now` (Date) - Date to use for certificate validity checks. Defaults to current time.
+    - `rootStore` (RootStore) - Custom root store for certificate validation. Defaults to built-in VMC root certificates.
+    - `now` (Date) - Date to use for certificate validity checks. Defaults to current time.
 
 **Returns:** Promise resolving to an object:
 
@@ -108,22 +108,22 @@ Adds a trusted root certificate to the store.
 
 All errors include a `code` property for programmatic handling:
 
-| Code | Description |
-|------|-------------|
-| `INVALID_CERT_BUNDLE` | Empty or invalid PEM certificate bundle |
-| `INVALID_CHAIN` | Certificate chain validation failed |
-| `INVALID_LOGOTYPE_EXT` | Certificate missing required logotype extension |
-| `CERTIFICATE_VERIFICATION_ERROR` | Certificate expired or not yet valid |
-| `SELF_SIGNED_CERT_IN_CHAIN` | No trusted root found for the certificate chain |
-| `BIMI_EXT_KEY_MISSING` | Certificate missing BIMI Extended Key Usage OID |
+| Code                             | Description                                     |
+| -------------------------------- | ----------------------------------------------- |
+| `INVALID_CERT_BUNDLE`            | Empty or invalid PEM certificate bundle         |
+| `INVALID_CHAIN`                  | Certificate chain validation failed             |
+| `INVALID_LOGOTYPE_EXT`           | Certificate missing required logotype extension |
+| `CERTIFICATE_VERIFICATION_ERROR` | Certificate expired or not yet valid            |
+| `SELF_SIGNED_CERT_IN_CHAIN`      | No trusted root found for the certificate chain |
+| `BIMI_EXT_KEY_MISSING`           | Certificate missing BIMI Extended Key Usage OID |
 
 ```javascript
 try {
-  const logo = await vmc(pemBundle);
+    const logo = await vmc(pemBundle);
 } catch (err) {
-  if (err.code === 'CERTIFICATE_VERIFICATION_ERROR') {
-    console.log('Certificate has expired');
-  }
+    if (err.code === 'CERTIFICATE_VERIFICATION_ERROR') {
+        console.log('Certificate has expired');
+    }
 }
 ```
 

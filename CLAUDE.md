@@ -8,6 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Do not include Claude as a co-contributor in commit messages.
 - Use Conventional Commit format for all commit messages.
 - Keep the year in LICENSE up to date.
+- Always pin dependencies to exact versions in package.json (e.g. `"1.2.3"`, never `"^1.2.3"` or `"~1.2.3"`).
 
 ## Project Overview
 

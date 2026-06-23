@@ -19,9 +19,9 @@
     "author": "Postal Systems OU",
     "license": "MIT",
     "dependencies": {
-        "@peculiar/asn1-schema": "2.6.0",
-        "@peculiar/asn1-x509": "2.6.1",
-        "@peculiar/asn1-x509-logotype": "2.6.1"
+        "@peculiar/asn1-schema": "2.8.0",
+        "@peculiar/asn1-x509": "2.8.0",
+        "@peculiar/asn1-x509-logotype": "2.8.0"
     },
     "devDependencies": {
         "@eslint/eslintrc": "3.3.4",

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5](https://github.com/postalsys/vmc/compare/v1.1.4...v1.1.5) (2026-06-23)
+
+
+### Bug Fixes
+
+* **deps:** bump @peculiar/asn1-* to 2.8.0 ([#8](https://github.com/postalsys/vmc/issues/8)) ([0a976ee](https://github.com/postalsys/vmc/commit/0a976ee90b3005cd70bec3837bc2b3e2b3f7c157))
+
 ## [1.1.4](https://github.com/postalsys/vmc/compare/v1.1.3...v1.1.4) (2026-03-03)
 
 

@@ -7,7 +7,7 @@
         "test": "eslint . && mocha --recursive \"./test/**/*.js\" --reporter spec",
         "format": "prettier --write .",
         "root-store": "node build-root-store.js",
-        "update": "rm -rf node_modules package-lock.json && ncu -u && npm install && npm run root-store"
+        "update": "rm -rf node_modules package-lock.json && ncu -u && npm install && npm run root-store && npm run format"
     },
     "repository": {
         "type": "git",
